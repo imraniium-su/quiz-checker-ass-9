@@ -8,9 +8,9 @@ const Reachart = ({ statistics }) => {
     // const { total } = statistics;
     return (
         <div>
+            <h2 className='text-3xl'>Line chart Showing total number of quiz </h2>
+            <div className='flex justify-center mt-8'>
 
-            <div>
-                <h2>Line chart Showing total number of quiz </h2>
                 <LineChart width={400} height={300} data={statistics}>
                     <XAxis dataKey="name" />
                     <YAxis />
@@ -18,7 +18,8 @@ const Reachart = ({ statistics }) => {
                     <Tooltip></Tooltip>
                 </LineChart>
             </div>
-            <div className='mt-8'>
+            <h2 className='text-3xl mt-8'>Bar chart Showing total number of quiz </h2>
+            <div className='flex justify-center mt-8'>
                 <BarChart width={500} height={200} data={statistics}>
                     <XAxis dataKey="name" />
                     <YAxis />
@@ -27,7 +28,8 @@ const Reachart = ({ statistics }) => {
 
                 </BarChart>
             </div>
-            <div>
+            <h2 className='text-3xl mt-8'>Bar chart Showing total number of quiz </h2>
+            <div className='flex justify-center mt-8'>
                 <PieChart width={400} height={400}>
                     <Pie data={statistics} dataKey='total' cx="50%" cy="50%" outerRadius={60} fill="#8884d8" />
                     <Pie data={statistics} dataKey='total' cx="50%" cy="50%" innerRadius={70} outerRadius={90} fill="#82ca9d" label />
