@@ -1,33 +1,51 @@
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEye } from '@fortawesome/free-solid-svg-icons'
+import React from 'react';
+import { EyeIcon } from '@heroicons/react/24/solid'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const QuizQuestion = ({ quiz }) => {
+const QuizQuestion = ({ quizPractise, index }) => {
     const parse = require('html-react-parser');
-    const { question, options, id, correctAnswer } = quiz;
+    const { question, options, id, correctAnswer } = quizPractise;
 
-    const checkAnswer = () => {
-
+    const isCorrect = () => {
+        toast.success('Correct');
 
     }
+    const isWrong = () => {
+        toast.error('Wrong');
 
-    const toastBtn = () => {
-        toast(correctAnswer);
+    }
+    const showToastMessage = () => {
+        toast.success(correctAnswer, {
+            toastId: 'id'
+        });
+        // const toastBtn = () => {
+        //     toast(correctAnswer, {
+        //         position: toast.POSITION.TOP_RIGHT
+        //     });
     };
     return (
-        <div className='w-3/5 mx-auto rounded-md bg-slate-300 p-4  my-8 drop-shadow-xl'>
+        <div className='flex'>
+            <div className='w-3/5 mx-auto rounded-md bg-slate-300 p-4  my-8 drop-shadow-xl'>
+                <h4 className='text-2xl'>Quiz:{index + 1}</h4>
+                <div className='flex justify-evenly'>
+                    <div className='mb-3 text-2xl ml-10'>{parse(question)}</div>
 
-            <div className='flex justify-center'>
-                <p className='mb-3 text-2xl ml-10
-            '>{parse(question)}</p>
-                <button onClick={toastBtn} className='ml-auto '><FontAwesomeIcon icon={faEye} /></button><ToastContainer />
-            </div>
-            <div className='mb-3 grid md:grid-cols-1 lg:grid-cols-2 gap-3'>
-                {options.map(option => (<div className='p-3 bg-slate-200 my-3 w-11/12 drop-shadow-xl rounded-md'><input className='mr-4' type="radio" name={id} onClick={checkAnswer} />{option}</div>))}
-            </div>
+                    <div className='ml-auto'>
+                        <button onClick={showToastMessage}><EyeIcon className='w-8 h-8 text-black'></EyeIcon></button>
+                        <ToastContainer />
+                    </div>
+                </div>
+                {/* <div className='ml-auto'><button onClick={toastBtn}  ><EyeIcon className='w-8 h-8 text-black'></EyeIcon></button><ToastContainer /></div>
+                </div> */}
+                <div className='mb-3 grid md:grid-cols-1 lg:grid-cols-2 gap-3'>
+                    {options.map(option => (<div className='p-3 bg-slate-200 my-3 w-11/12 drop-shadow-xl rounded-md'>
+                        <input className='mr-10' type="radio" name={id} onClick={() => option === correctAnswer ? isCorrect() : isWrong()} />
+                        <span className='ml-auto'>{option}</span>
+                    </div>))}
+                </div>
 
+            </div>
         </div>
     );
 };

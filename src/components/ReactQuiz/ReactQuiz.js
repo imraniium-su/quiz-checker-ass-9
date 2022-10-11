@@ -5,18 +5,15 @@ import QuizQuestion from '../QuizQuestion/QuizQuestion';
 
 const ReactQuiz = () => {
     const questiones = useLoaderData();
-    const questionsname = questiones.data;
-    const quizquestion = questionsname.questions;
+    const quizquestion = questiones.data.questions;
 
     return (
-        <div>
-            <p className='text-3xl font-bold mb-3 '>Quiz Practise of {questionsname.name}</p>
-            <div>
-                {
-                    quizquestion.map(quiz => <QuizQuestion quiz={quiz}></QuizQuestion>)
-                }
-            </div>
+        <div className='my-10'>
+            <p className='text-3xl font-bold mb-3 '>Quiz Practise of {questiones.name}</p>
 
+            {
+                quizquestion.map((quizPractise, index) => <QuizQuestion quizPractise={quizPractise} index={index}></QuizQuestion>)
+            }
         </div>
     );
 };
