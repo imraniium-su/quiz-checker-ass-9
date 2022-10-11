@@ -7,6 +7,7 @@ import Home from './components/Home/Home';
 import Statistics from './components/Statistics/Statistics';
 import Blog from './components/Blog/Blog';
 import ReactQuiz from './components/ReactQuiz/ReactQuiz';
+import Reachart from './components/Statistics/Reachart/Reachart';
 
 function App() {
   const router = createBrowserRouter([
@@ -40,9 +41,13 @@ function App() {
             return fetch(`https://openapi.programming-hero.com/api/quiz/${params.quizID}`)
           },
           element: <ReactQuiz></ReactQuiz>
+        },
+        {
+          path: '/recart', element: <Reachart></Reachart>
         }
       ]
-    }
+    },
+    { path: '*', element: 'This router not found' }
   ])
   return (
 
