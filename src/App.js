@@ -47,7 +47,7 @@ function App() {
         }
       ]
     },
-    { path: '*', element: 'This router not found' }
+    { path: '*', element: 'This router is not found' }
   ])
   return (
 

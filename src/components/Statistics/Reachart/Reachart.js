@@ -10,14 +10,15 @@ const Reachart = ({ statistics }) => {
         <div>
 
             <div>
-                <LineChart width={500} height={400} data={statistics}>
+                <h2>Line chart Showing total number of quiz </h2>
+                <LineChart width={400} height={300} data={statistics}>
                     <XAxis dataKey="name" />
                     <YAxis />
                     <Line type="monotone" dataKey='total' stroke="#82ca9d" />
                     <Tooltip></Tooltip>
                 </LineChart>
             </div>
-            <div className='mt-6'>
+            <div className='mt-8'>
                 <BarChart width={500} height={200} data={statistics}>
                     <XAxis dataKey="name" />
                     <YAxis />
