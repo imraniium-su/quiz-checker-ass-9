@@ -12,7 +12,7 @@ const ReactQuiz = () => {
             <p className='text-3xl font-bold mb-3 '>Quiz Practise of {questiones.name}</p>
 
             {
-                quizquestion.map((quizPractise, index) => <QuizQuestion quizPractise={quizPractise} index={index}></QuizQuestion>)
+                quizquestion.map((quizPractise, index, idx) => <QuizQuestion quizPractise={quizPractise} index={index} key={idx}></QuizQuestion>)
             }
         </div>
     );

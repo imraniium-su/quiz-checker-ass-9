@@ -8,7 +8,7 @@ const Reachart = ({ statistics }) => {
     // const { total } = statistics;
     return (
         <div>
-            <div className='text-3xl p-3 bg-gray-200 rounded-md w-3/5 mx-auto mt-8'>Line chart Showing total number of quiz</div>
+            <div className='text-3xl font-bold bg-emerald-100 p-3 rounded-md drop-shadow-xl w-3/5 mx-auto my-8'>Line chart Showing total number of quiz</div>
 
             <div className='flex justify-center mt-8'>
 
@@ -19,7 +19,7 @@ const Reachart = ({ statistics }) => {
                     <Tooltip></Tooltip>
                 </LineChart>
             </div>
-            <div className='text-3xl p-3 bg-gray-200 rounded-md w-3/5 mx-auto my-8'>Bar chart Showing total number of quiz</div>
+            <div className='text-3xl font-bold bg-emerald-100 p-3 rounded-md drop-shadow-xl w-3/5 mx-auto my-8'>Bar chart Showing total number of quiz</div>
             <div className='flex justify-center mt-8'>
                 <BarChart width={500} height={200} data={statistics}>
                     <XAxis dataKey="name" />
@@ -29,7 +29,7 @@ const Reachart = ({ statistics }) => {
 
                 </BarChart>
             </div>
-            <div className='text-3xl p-3 bg-gray-200 rounded-md w-3/5 mx-auto my-8'>Pie chart Showing total number of quiz</div>
+            <div className='text-3xl font-bold bg-emerald-100 p-3 rounded-md drop-shadow-xl w-3/5 mx-auto my-8'>Pie chart Showing total number of quiz</div>
             <div className='flex justify-center mt-8'>
                 <PieChart width={400} height={400}>
                     <Pie data={statistics} dataKey='total' cx="50%" cy="50%" outerRadius={60} fill="#8884d8" />

@@ -10,7 +10,7 @@ const Header = () => {
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <a href="">
-                            <h2 className="text-3xl font-bold text-orange-400">Quiz Hunter</h2>
+                            <h2 className="text-3xl font-bold text-blue-50 drop-shadow-xl">Quiz Hunter</h2>
                         </a>
                         <div className="md:hidden">
                             <button
@@ -57,13 +57,13 @@ const Header = () => {
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
 
-                            <li className="text-white text-2xl hover:text-blue-600">
+                            <li className="text-white text-2xl hover:text-blue-600 font-bold">
                                 <NavLink className={({ isActive }) => isActive ? 'active' : undefined} to='/quiz'>Quiz</NavLink>
                             </li>
-                            <li className="text-white text-2xl hover:text-blue-600">
+                            <li className="text-white text-2xl hover:text-blue-600 font-bold">
                                 <NavLink to='/statistic'>Statistics</NavLink>
                             </li>
-                            <li className="text-white text-2xl hover:text-blue-600">
+                            <li className="text-white text-2xl hover:text-blue-600 font-bold">
                                 <NavLink to='/blog'>Blog</NavLink>
                             </li>
 

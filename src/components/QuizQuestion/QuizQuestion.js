@@ -28,8 +28,8 @@ const QuizQuestion = ({ quizPractise, index }) => {
         <div className='flex'>
             <div className='w-3/5 mx-auto rounded-md bg-slate-300 p-4  my-8 drop-shadow-xl'>
                 <h4 className='text-2xl'>Quiz:{index + 1}</h4>
-                <div className='flex justify-evenly'>
-                    <div className='mb-3 text-2xl ml-10'>{parse(question)}</div>
+                <div className='flex justify-evenly mb-4'>
+                    <div className='mb-4 text-2xl ml-10'>{parse(question)}</div>
 
                     <div className='ml-auto'>
                         <button onClick={showToastMessage}><EyeIcon className='w-8 h-8 text-black'></EyeIcon></button>
