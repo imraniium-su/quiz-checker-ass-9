@@ -21,7 +21,7 @@ const Reachart = ({ statistics }) => {
             </div>
             <div className='text-3xl font-bold bg-emerald-100 p-3 rounded-md drop-shadow-xl w-3/5 mx-auto my-8'>Bar chart Showing total number of quiz</div>
             <div className='flex justify-center mt-8'>
-                <BarChart width={3500} height={250} data={statistics}>
+                <BarChart width={350} height={250} data={statistics}>
                     <XAxis dataKey="name" />
                     <YAxis />
                     <Tooltip></Tooltip>
